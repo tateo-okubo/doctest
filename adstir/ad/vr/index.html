@@ -36,7 +36,7 @@
     
     
       
-        <title>動画リワード - iOS adstir AdMob integration</title>
+        <title>実装 - iOS adstir AdMob integration</title>
       
     
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                動画リワード
+                実装
               
             </span>
           
@@ -595,6 +595,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4" checked>
+    
+    <label class="md-nav__link" for="nav-2-4-4">
+      動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -603,11 +624,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        動画リワード
+        実装
       </label>
     
-    <a href="./" title="動画リワード" class="md-nav__link md-nav__link--active">
-      動画リワード
+    <a href="./" title="実装" class="md-nav__link md-nav__link--active">
+      実装
     </a>
     
       
@@ -691,6 +712,23 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1112,6 +1150,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1348,12 +1422,15 @@
 <p>動画広告の視聴完了時にユーザーにインセンティブを付与することができます。</p>
 <h3 id="1-メディアユーザidの設定を行う"><a class="toclink" href="#1-メディアユーザidの設定を行う">1. メディアユーザIDの設定を行う</a><a class="headerlink" href="#1-メディアユーザidの設定を行う" title="Permanent link">&para;</a></h3>
 <p>サーバーサイドで成果通知を受け取る場合、メディアユーザーIDを設定します。
-メディアユーザIDの設定は、<code>動画リワード広告の読み込み</code>よりも前までに設定する必要があります。</p>
+メディアユーザIDの設定は、<a href="#5-動画リワード広告の読み込み"><code>動画リワード広告の読み込み</code></a>よりも前までに設定する必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">setMediaUserID</span><span class="p">:[[</span><span class="bp">UIDevice</span> <span class="n">currentDevice</span><span class="p">].</span><span class="n">identifierForVendor</span> <span class="n">UUIDString</span><span class="p">]];</span> <span class="c1">// ここでは例として、Vendor IDを指定していますが、任意のIDが利用可能です。</span>
 </pre></div>
 
 <h3 id="2-動画広告の初期化を行う"><a class="toclink" href="#2-動画広告の初期化を行う">2. 動画広告の初期化を行う</a><a class="headerlink" href="#2-動画広告の初期化を行う" title="Permanent link">&para;</a></h3>
-<p><code>AdstirVideoAds prepareWithMedia</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。動画リワード広告とフルスクリーン広告を併用する場合は、同時に初期化を行う必要があります。</p>
+<p><code>AdstirVideoAds prepareWithMedia</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。</p>
+<div class="admonition notice">
+<p>動画リワード広告とフルスクリーン広告を併用する場合は、動画リワード広告とフルスクリーン広告の広告枠全て同時に初期化を行う必要があります。</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">prepareWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spots</span><span class="p">:</span><span class="l">@[</span><span class="p">@</span><span class="err">枠</span><span class="n">No1</span><span class="p">,</span> <span class="p">@</span><span class="err">枠</span><span class="n">No2</span><span class="l">]</span><span class="p">];</span>
 </pre></div>
 
@@ -1409,7 +1486,7 @@
 <h3 id="6-動画リワード広告の再生"><a class="toclink" href="#6-動画リワード広告の再生">6. 動画リワード広告の再生</a><a class="headerlink" href="#6-動画リワード広告の再生" title="Permanent link">&para;</a></h3>
 <p>読み込みが完了した動画リワード広告を再生します。
 動画の再生を行うViewControllerを渡してください。
-動画の再生後、もう一度動画を再生するためには<code>5.動画リワード広告の読み込み</code>を行う必要があります。</p>
+動画の再生後、もう一度動画を再生するためには<a href="#5-動画リワード広告の読み込み"><code>5.動画リワード広告の読み込み</code></a>を行う必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">([</span><span class="n">aVideoReward</span> <span class="n">canShow</span><span class="p">])</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">aVideoReward</span> <span class="nl">showFromViewController</span><span class="p">:</span><span class="nb">self</span><span class="p">]];</span>
 <span class="p">}</span>
@@ -1669,7 +1746,7 @@
 <p>adstirでは、インセンティブ付与の通知を、任意のコールバックURLに行うことが可能です。
 付与するインセンティブの単位と額は、任意の値に変更可能です。
 <code>AdstirVideoReward.setMediaUserID</code> でユーザーIDを設定していない場合には通知されませんので、ご注意ください。</p>
-<p><a href="https://github.com/united-adstir/AdStir-Integration-Guide-Android/wiki/%E5%8B%95%E7%94%BB%E3%82%A4%E3%83%B3%E3%82%BB%E3%83%B3%E3%83%86%E3%82%A3%E3%83%96%E4%BB%98%E4%B8%8E%E3%82%92%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AFURL%E3%81%B8%E9%80%9A%E7%9F%A5%E3%81%99%E3%82%8B">動画インセンティブ付与をコールバックURLに通知する</a></p>
+<p><a href="callback/">動画インセンティブ付与をコールバックURLに通知する</a></p>
 <h2 id="ライブラリ詳細"><a class="toclink" href="#ライブラリ詳細">ライブラリ詳細</a><a class="headerlink" href="#ライブラリ詳細" title="Permanent link">&para;</a></h2>
 <p><a href="../../api/#動画視聴型インセンティブ広告">APIリファレンス</a>をご覧ください。</p>
                 
@@ -1708,13 +1785,13 @@
           </a>
         
         
-          <a href="../interstitial/" title="全画面インタースティシャル" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="callback/" title="リワードコールバック" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                全画面インタースティシャル
+                リワードコールバック
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

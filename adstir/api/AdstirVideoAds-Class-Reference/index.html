@@ -591,10 +591,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../ad/video/" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4">
+    
+    <label class="md-nav__link" for="nav-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/vr/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/vr/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1124,6 +1160,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1377,6 +1449,10 @@
 <hr />
 <h3 id="preparewithmediaspots"><a class="toclink" href="#preparewithmediaspots">+prepareWithMedia:spots:</a><a class="headerlink" href="#preparewithmediaspots" title="Permanent link">&para;</a></h3>
 <p>動画視聴型インセンティブ広告及び全画面インタースティシャル広告の初期化を行います。</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>動画リワード広告とフルスクリーン広告を併用する場合は、動画リワード広告とフルスクリーン広告の広告枠全て同時に初期化を行う必要があります。</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="p">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">prepareWithMedia:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">media</span> <span class="nf">spots:</span><span class="p">(</span><span class="bp">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">spots</span>
 </pre></div>
 
@@ -1397,7 +1473,11 @@
 </ul>
 <hr />
 <h3 id="setmediauserid"><a class="toclink" href="#setmediauserid">+setMediaUserID:</a><a class="headerlink" href="#setmediauserid" title="Permanent link">&para;</a></h3>
-<p>メディアユーザIDを設定します。メディアユーザーIDを設定していない場合は、動画リワード利用時の<a href="https://github.com/united-adstir/AdStir-Integration-Guide-Android/wiki/%E5%8B%95%E7%94%BB%E3%82%A4%E3%83%B3%E3%82%BB%E3%83%B3%E3%83%86%E3%82%A3%E3%83%96%E4%BB%98%E4%B8%8E%E3%82%92%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AFURL%E3%81%B8%E9%80%9A%E7%9F%A5%E3%81%99%E3%82%8B">成果のコールバックURLへの通知</a>を行いません。</p>
+<p>メディアユーザIDを設定します。メディアユーザーIDを設定していない場合は、動画リワード利用時の<a href="../ad/vr/calback.md">成果のコールバックURLへの通知</a>を行いません。</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p><a href="../video/AdstirVideoReward-Class-Reference#-load">動画リワード広告を読み込む</a>前にメディアユーザーIDを設定する必要があります。</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="p">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setMediaUserID:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">mediaUserID</span>
 </pre></div>
 

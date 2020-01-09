@@ -654,10 +654,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../ad/video/" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4">
+    
+    <label class="md-nav__link" for="nav-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/vr/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ad/vr/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1079,6 +1115,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1293,9 +1365,6 @@ platformの行は、プロジェクトに応じて適宜設定してください
 <span class="c1"># AdMobメディエーションを利用する場合は、下記のコメントを外します。</span>
 <span class="c1"># pod &#39;AdStir-Ads-SDK/AdMob-Package&#39;</span>
 
-<span class="c1"># (フルスクリーンでない)インタースティシャル広告を利用する場合は、下記のコメントを外します。</span>
-<span class="c1"># pod &#39;AdStir-Ads-SDK/AdstirLegacyInterstitial&#39;</span>
-
 <span class="n">target</span> <span class="s1">&#39;projectname&#39;</span> <span class="k">do</span>
   <span class="c1"># Uncomment the next line if you&#39;re using Swift or would like to use dynamic frameworks</span>
   <span class="c1"># use_frameworks!</span>
@@ -1305,6 +1374,85 @@ platformの行は、プロジェクトに応じて適宜設定してください
 <span class="k">end</span>
 </pre></div>
 
+<p>podに記述したものと、導入されるSDKの対応は以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th>pod</th>
+<th>導入されるもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AdStir-Ads-SDK</td>
+<td>adstir SDK</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/AdMobMediationAdapter</td>
+<td>adstir SDK / adstirのAdMobアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/AdColony</td>
+<td>adstir SDK / AdColony SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/AdCorsa</td>
+<td>adstir SDK / AdCorsa SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/AppLovin</td>
+<td>adstir SDK / AppLovin SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/Maio</td>
+<td>adstir SDK / Maio SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/Mobvista</td>
+<td>adstir SDK / Mobvista SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/MoPub</td>
+<td>adstir SDK / MoPub SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/Nend</td>
+<td>adstir SDK / Nend SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/TapJoy</td>
+<td>adstir SDK / TapJoy SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/TikTok</td>
+<td>adstir SDK / TikTok SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/UnityAds</td>
+<td>adstir SDK / UnityAds SDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/All-Incentivized</td>
+<td>adstir SDK / 動画リワード対応しているSDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/All-Interstitial</td>
+<td>adstir SDK / 全画面インタースティシャル対応しているSDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/All-Swipeinterstitial</td>
+<td>adstir SDK / スワイプインタースティシャル対応しているSDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/All-adstir</td>
+<td>adstir SDK / <a href="../../network/#提携対応アドネットワーク">adstirと提携しているアドネットワーク</a>のSDKとアダプター</td>
+</tr>
+<tr>
+<td>AdStir-Ads-SDK/AdMob-Package</td>
+<td>adstir SDK / <a href="../../../admob/network/#admobメディエーションで利用できるアドネットワーク">AdMobメディエーション</a>で利用するアドネットワーク / <a href="../../../aps/init/#amazon-publisher-servicesapsの初期設定">APS</a>のSDKとアダプター</td>
+</tr>
+</tbody>
+</table>
 <h2 id="sdkのインストール"><a class="toclink" href="#sdkのインストール">SDKのインストール</a><a class="headerlink" href="#sdkのインストール" title="Permanent link">&para;</a></h2>
 <p>新規でadstirのSDKを追加する場合は、下記のコマンドを実行します。</p>
 <div class="codehilite"><pre><span></span>$ pod install

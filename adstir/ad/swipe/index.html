@@ -588,26 +588,6 @@
     広告の設置例
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective-c" class="md-nav__link">
-    Objective-C
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#swift" class="md-nav__link">
-    Swift
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -693,10 +673,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../video/" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4">
+    
+    <label class="md-nav__link" for="nav-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1118,6 +1134,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1310,26 +1362,6 @@
     広告の設置例
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective-c" class="md-nav__link">
-    Objective-C
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#swift" class="md-nav__link">
-    Swift
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1382,8 +1414,10 @@
 </pre></div>
 
 <h2 id="広告の設置例"><a class="toclink" href="#広告の設置例">広告の設置例</a><a class="headerlink" href="#広告の設置例" title="Permanent link">&para;</a></h2>
-<h3 id="objective-c"><a class="toclink" href="#objective-c">Objective-C</a><a class="headerlink" href="#objective-c" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
 <span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
 
 <span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">AdstirMraidViewDelegate</span><span class="o">&gt;</span>
@@ -1436,36 +1470,36 @@
 <span class="p">}</span>
 
 <span class="k">@end</span>
-</pre></div>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">AdstirAds</span>
 
-<h3 id="swift"><a class="toclink" href="#swift">Swift</a><a class="headerlink" href="#swift" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">import</span> <span class="n">UIKit</span>
-<span class="n">import</span> <span class="n">AdstirAds</span>
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
 
-<span class="k">class</span> <span class="nl">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">adView</span><span class="p">:</span> <span class="n">AdstirFullscreenView</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
 
-    <span class="n">var</span> <span class="nl">adView</span><span class="p">:</span> <span class="n">AdstirFullscreenView</span><span class="o">?</span> <span class="o">=</span> <span class="nb">nil</span>
-
-    <span class="n">override</span> <span class="n">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
         <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
-        <span class="n">let</span> <span class="n">media</span> <span class="o">=</span> <span class="s">&quot;メディアID&quot;</span><span class="p">;</span>
-        <span class="n">let</span> <span class="n">spot</span> <span class="o">=</span> <span class="err">枠</span><span class="n">No</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nv">media</span> <span class="p">=</span> <span class="s">&quot;メディアID&quot;</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nv">spot</span> <span class="p">=</span> <span class="err">枠</span><span class="n">No</span><span class="p">;</span>
 
-        <span class="n">adView</span> <span class="o">=</span> <span class="n">AdstirFullscreenView</span><span class="p">(</span><span class="nl">view</span><span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">,</span> <span class="nl">media</span><span class="p">:</span> <span class="n">media</span><span class="p">,</span> <span class="nl">spot</span><span class="p">:</span> <span class="n">UInt</span><span class="p">(</span><span class="n">spot</span><span class="p">))</span>
+        <span class="n">adView</span> <span class="p">=</span> <span class="n">AdstirFullscreenView</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">,</span> <span class="n">media</span><span class="p">:</span> <span class="n">media</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="nb">UInt</span><span class="p">(</span><span class="n">spot</span><span class="p">))</span>
 
-        <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">adView</span><span class="o">!</span><span class="p">)</span>
-        <span class="n">adView</span><span class="o">?</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">adView</span><span class="p">!)</span>
+        <span class="n">adView</span><span class="p">?.</span><span class="n">start</span><span class="p">()</span>
 
     <span class="p">}</span>
 
-    <span class="n">override</span> <span class="n">func</span> <span class="n">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nb">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
         <span class="c1">// Dispose of any resources that can be recreated.</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
+</pre></div></div>
+</div>
 <h2 id="ライブラリ詳細"><a class="toclink" href="#ライブラリ詳細">ライブラリ詳細</a><a class="headerlink" href="#ライブラリ詳細" title="Permanent link">&para;</a></h2>
 <p><a href="../../api/#スワイプインタースティシャル広告">APIリファレンス</a>をご覧ください。</p>
                 

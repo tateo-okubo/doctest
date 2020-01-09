@@ -593,10 +593,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../video/" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4">
+    
+    <label class="md-nav__link" for="nav-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1091,6 +1127,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1305,7 +1377,10 @@
                 <h1 id="全画面インタースティシャル広告の導入"><a class="toclink" href="#全画面インタースティシャル広告の導入">全画面インタースティシャル広告の導入</a><a class="headerlink" href="#全画面インタースティシャル広告の導入" title="Permanent link">&para;</a></h1>
 <p>動画 / 静止画 による全画面広告の導入方法です。</p>
 <h2 id="1-動画広告の初期化を行う"><a class="toclink" href="#1-動画広告の初期化を行う">1. 動画広告の初期化を行う</a><a class="headerlink" href="#1-動画広告の初期化を行う" title="Permanent link">&para;</a></h2>
-<p><code>AdstirVideoAds prepareWithMedia</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。動画リワード広告とフルスクリーン広告を併用する場合は、同時に初期化を行う必要があります。</p>
+<p><code>AdstirVideoAds prepareWithMedia</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。</p>
+<div class="admonition notice">
+<p>動画リワード広告とフルスクリーン広告を併用する場合は、動画リワード広告とフルスクリーン広告の広告枠全て同時に初期化を行う必要があります。</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">prepareWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spots</span><span class="p">:</span><span class="l">@[</span><span class="p">@</span><span class="err">枠</span><span class="n">No1</span><span class="p">,</span> <span class="p">@</span><span class="err">枠</span><span class="n">No2</span><span class="l">]</span><span class="p">];</span>
 </pre></div>
 
@@ -1355,7 +1430,7 @@
 <h2 id="5-フルスクリーン広告の再生"><a class="toclink" href="#5-フルスクリーン広告の再生">5. フルスクリーン広告の再生</a><a class="headerlink" href="#5-フルスクリーン広告の再生" title="Permanent link">&para;</a></h2>
 <p>読み込みが完了したフルスクリーン広告を再生します。
 動画の再生を行うViewControllerを渡してください。
-動画の再生後、もう一度動画を再生するためには<code>4.フルスクリーン広告の読み込み</code>を行う必要があります。</p>
+動画の再生後、もう一度動画を再生するためには<a href="#4-フルスクリーン広告の読み込み"><code>4.フルスクリーン広告の読み込み</code></a>を行う必要があります。</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">interstitial</span><span class="p">.</span><span class="n">canShow</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">interstitial</span> <span class="nl">showFromViewController</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
 <span class="p">}</span>
@@ -1663,7 +1738,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../video/" title="動画リワード" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../vr/callback/" title="リワードコールバック" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1672,7 +1747,7 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                動画リワード
+                リワードコールバック
               </span>
             </div>
           </a>

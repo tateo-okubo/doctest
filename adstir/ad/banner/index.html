@@ -559,27 +559,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#モバイルバナー320x50" class="md-nav__link">
-    モバイルバナー(320x50)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#モバイルバナー320x100" class="md-nav__link">
-    モバイルバナー(320x100)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#レクタングル300x250" class="md-nav__link">
-    レクタングル(300x250)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#カスタム広告サイズ" class="md-nav__link">
     カスタム広告サイズ
   </a>
@@ -686,10 +665,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../video/" title="動画リワード" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-4" type="checkbox" id="nav-2-4-4">
+    
+    <label class="md-nav__link" for="nav-2-4-4">
       動画リワード
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-4">
+        動画リワード
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/" title="実装" class="md-nav__link">
+      実装
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vr/callback/" title="リワードコールバック" class="md-nav__link">
+      リワードコールバック
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1111,6 +1126,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../info/user_data/" title="ユーザデータアクセス許可に関して" class="md-nav__link">
+      ユーザデータアクセス許可に関して
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../question/" title="よくある質問" class="md-nav__link">
       よくある質問
@@ -1286,27 +1337,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#モバイルバナー320x50" class="md-nav__link">
-    モバイルバナー(320x50)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#モバイルバナー320x100" class="md-nav__link">
-    モバイルバナー(320x100)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#レクタングル300x250" class="md-nav__link">
-    レクタングル(300x250)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#カスタム広告サイズ" class="md-nav__link">
     カスタム広告サイズ
   </a>
@@ -1453,18 +1483,31 @@
 <ul>
 <li>iPhone 6/6 Plusに対応したアプリでは、縦向きの際でも画面幅一杯に広告を表示することができません。左右中央にセンタリングして表示するなど、レイアウトの調整をお願い致します。</li>
 <li>ARCを利用している場合は、propertyの宣言をretainから、strongに変更し、autoreleaseを削除してください。</li>
-<li>バージョン2.0.0から、広告ビューがAdstirMraidViewになりました。お手数をおかけいたしますが、変更をお願いいたします。</li>
-<li>バージョン2.0.0から、広告サイズの指定方法が変更になりました。下記の対応している広告サイズを参考に、実装してください。</li>
-<li>バージョン2.0.0から、枠Noの指定方法が文字列から整数(自然数、NSUInteger)に変更になりました。</li>
-<li>Xcodeの仕様で、文字列のままでも警告が出ませんのでご注意ください。</li>
 </ul>
 <h2 id="対応している広告サイズ"><a class="toclink" href="#対応している広告サイズ">対応している広告サイズ</a><a class="headerlink" href="#対応している広告サイズ" title="Permanent link">&para;</a></h2>
-<h3 id="モバイルバナー320x50"><a class="toclink" href="#モバイルバナー320x50">モバイルバナー(320x50)</a><a class="headerlink" href="#モバイルバナー320x50" title="Permanent link">&para;</a></h3>
-<p>kAdstirAdSize320x50を指定します。</p>
-<h3 id="モバイルバナー320x100"><a class="toclink" href="#モバイルバナー320x100">モバイルバナー(320x100)</a><a class="headerlink" href="#モバイルバナー320x100" title="Permanent link">&para;</a></h3>
-<p>kAdstirAdSize320x100を指定します。</p>
-<h3 id="レクタングル300x250"><a class="toclink" href="#レクタングル300x250">レクタングル(300x250)</a><a class="headerlink" href="#レクタングル300x250" title="Permanent link">&para;</a></h3>
-<p>kAdstirAdSize300x250を指定します。</p>
+<p>adstir SDKは下記の広告サイズに対応しております。</p>
+<table>
+<thead>
+<tr>
+<th>広告サイズ</th>
+<th>広告サイズ指定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>モバイルバナー(320x50)</td>
+<td>kAdstirAdSize320x50</td>
+</tr>
+<tr>
+<td>モバイルバナー(320x100)</td>
+<td>kAdstirAdSize320x100</td>
+</tr>
+<tr>
+<td>レクタングル(300x250)</td>
+<td>kAdstirAdSize300x250</td>
+</tr>
+</tbody>
+</table>
 <h3 id="カスタム広告サイズ"><a class="toclink" href="#カスタム広告サイズ">カスタム広告サイズ</a><a class="headerlink" href="#カスタム広告サイズ" title="Permanent link">&para;</a></h3>
 <p>カスタムの広告サイズを定義することも可能ですが、 当社提供のAdStir CPCでの案件が掲載できない場合がございますので、ご注意ください。</p>
 <div class="codehilite"><pre><span></span><span class="n">AdstirSizeFromCGSize</span><span class="p">(</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mf">468.0f</span><span class="p">,</span> <span class="mf">60.0f</span><span class="p">));</span>
