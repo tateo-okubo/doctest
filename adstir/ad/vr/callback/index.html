@@ -1331,28 +1331,34 @@
 <tr>
 <th>置換文字列</th>
 <th>内容</th>
+<th align="center">必須</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>${TRANSACTION_ID}<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td>${TRANSACTION_ID}</td>
 <td>AdStir成果ID</td>
+<td align="center">o</td>
 </tr>
 <tr>
-<td>${USER_ID}<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td>${USER_ID}</td>
 <td>メディアユーザーID</td>
+<td align="center">o</td>
 </tr>
 <tr>
 <td>${CURRENCY}</td>
 <td>インセンティブの単位</td>
+<td align="center">-</td>
 </tr>
 <tr>
 <td>${AMOUNT}</td>
 <td>インセンティブの額</td>
+<td align="center">-</td>
 </tr>
 <tr>
 <td>${IFA}</td>
 <td>Apple IDFA/Google Play Advertising ID (正常に取れない場合もあります)</td>
+<td align="center">-</td>
 </tr>
 </tbody>
 </table>
@@ -1366,14 +1372,6 @@
 IFAは正常に取れない場合がありますので、必ずUSER_IDで成果の付与は行ってください。
 コールバックサーバの呼び出しは、60秒でタイムアウトするよう設定しています。
 タイムアウトや、サーバー接続で200 OK以外のレスポンスが返された場合、<code>1分おきに最大10回リトライ</code>をします。 </p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>必須項目です。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
                 
                   
                 
