@@ -839,9 +839,71 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AdstirLoadImageDeledate
+      </label>
+    
     <a href="./" title="AdstirLoadImageDeledate" class="md-nav__link md-nav__link--active">
       AdstirLoadImageDeledate
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instance-methods" class="md-nav__link">
+    Instance Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-adstirdidloadimage" class="md-nav__link">
+    -adstirDidLoadImage:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-adstirdidfailtoloadimage" class="md-nav__link">
+    -adstirDidFailToLoadImage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1250,6 +1312,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instance-methods" class="md-nav__link">
+    Instance Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-adstirdidloadimage" class="md-nav__link">
+    -adstirDidLoadImage:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-adstirdidfailtoloadimage" class="md-nav__link">
+    -adstirDidFailToLoadImage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1265,18 +1376,18 @@
 <p>ネイティブ広告のデリゲートです。<br />
 AdstirLoadImageDeledateのメソッドはすべてバックグラウンドスレッドで動作します。<br />
 UIを操作する場合は<a href="http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/occ/instm/NSObject/performSelectorOnMainThread:withObject:waitUntilDone:">performSelectorOnMainThread:withObject:waitUntilDone:</a>や<a href="http://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/dispatch_get_main_queue.3.html">dispatch_sync(dispatch_get_main_queue(), ^(void){});</a>を利用してください。</p>
-<h1 id="instance-methods"><a class="toclink" href="#instance-methods">Instance Methods</a><a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h1>
+<h2 id="instance-methods"><a class="toclink" href="#instance-methods">Instance Methods</a><a class="headerlink" href="#instance-methods" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#-adstirdidloadimage">-adstirDidLoadImage:</a></li>
 <li><a href="#-adstirdidfailtoloadimage">-adstirDidFailToLoadImage</a></li>
 </ul>
 <hr />
-<h2 id="-adstirdidloadimage"><a class="toclink" href="#-adstirdidloadimage">-adstirDidLoadImage:</a><a class="headerlink" href="#-adstirdidloadimage" title="Permanent link">&para;</a></h2>
+<h3 id="-adstirdidloadimage"><a class="toclink" href="#-adstirdidloadimage">-adstirDidLoadImage:</a><a class="headerlink" href="#-adstirdidloadimage" title="Permanent link">&para;</a></h3>
 <p>バナー画像が読み込まれた際に呼ばれます。バナー画像はNSData型で受け取ります。</p>
 <div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirDidLoadImage:</span><span class="p">(</span><span class="bp">NSData</span> <span class="o">*</span><span class="p">)</span> <span class="nv">data</span><span class="p">;</span>
 </pre></div>
 
-<h3 id="parameters"><a class="toclink" href="#parameters">Parameters</a><a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<h4 id="parameters"><a class="toclink" href="#parameters">Parameters</a><a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li><em>data</em><ul>
 <li>バナー画像</li>
@@ -1284,7 +1395,7 @@ UIを操作する場合は<a href="http://developer.apple.com/library/mac/docume
 </li>
 </ul>
 <hr />
-<h2 id="-adstirdidfailtoloadimage"><a class="toclink" href="#-adstirdidfailtoloadimage">-adstirDidFailToLoadImage</a><a class="headerlink" href="#-adstirdidfailtoloadimage" title="Permanent link">&para;</a></h2>
+<h3 id="-adstirdidfailtoloadimage"><a class="toclink" href="#-adstirdidfailtoloadimage">-adstirDidFailToLoadImage</a><a class="headerlink" href="#-adstirdidfailtoloadimage" title="Permanent link">&para;</a></h3>
 <p>バナー画像の読み込みに失敗した際に呼ばれます。</p>
 <div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirDidFailToLoadImage</span><span class="p">;</span>
 </pre></div>
