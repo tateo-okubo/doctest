@@ -1391,32 +1391,67 @@
                 <h1 id="スワイプインタースティシャル広告の導入"><a class="toclink" href="#スワイプインタースティシャル広告の導入">スワイプインタースティシャル広告の導入</a><a class="headerlink" href="#スワイプインタースティシャル広告の導入" title="Permanent link">&para;</a></h1>
 <p>縦表示アプリに全画面で表示できる広告の導入方法です。</p>
 <h2 id="1-adstir-sdkをインポートします"><a class="toclink" href="#1-adstir-sdkをインポートします">1. adstir SDKをインポートします</a><a class="headerlink" href="#1-adstir-sdkをインポートします" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
-</pre></div>
-
-<h2 id="2-スワイプインタースティシャル広告のインスタンスを生成します"><a class="toclink" href="#2-スワイプインタースティシャル広告のインスタンスを生成します">2. スワイプインタースティシャル広告のインスタンスを生成します</a><a class="headerlink" href="#2-スワイプインタースティシャル広告のインスタンスを生成します" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">AdstirFullscreenView</span> <span class="o">*</span><span class="n">adView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AdstirFullscreenView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithView</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">media</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">];</span>
-</pre></div>
-
-<h2 id="3-スワイプインタースティシャル広告のデリゲートを設定しますオプション"><a class="toclink" href="#3-スワイプインタースティシャル広告のデリゲートを設定しますオプション">3. スワイプインタースティシャル広告のデリゲートを設定します(オプション)</a><a class="headerlink" href="#3-スワイプインタースティシャル広告のデリゲートを設定しますオプション" title="Permanent link">&para;</a></h2>
-<p>デリゲートをご利用される場合は、ページ下部の<code>広告の設置例</code>もご参考にしてください。</p>
-<div class="codehilite"><pre><span></span><span class="n">adView</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
-</pre></div>
-
-<h2 id="4-スワイプインタースティシャル広告をviewに配置します"><a class="toclink" href="#4-スワイプインタースティシャル広告をviewに配置します">4. スワイプインタースティシャル広告をviewに配置します</a><a class="headerlink" href="#4-スワイプインタースティシャル広告をviewに配置します" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">adView</span><span class="p">];</span>
-</pre></div>
-
-<h2 id="5-スワイプインタースティシャル広告の読み込みを開始します"><a class="toclink" href="#5-スワイプインタースティシャル広告の読み込みを開始します">5. スワイプインタースティシャル広告の読み込みを開始します</a><a class="headerlink" href="#5-スワイプインタースティシャル広告の読み込みを開始します" title="Permanent link">&para;</a></h2>
-<p>スワイプインタースティシャル広告はバックグラウンドで読み込みを行えます。
-スワイプインタースティシャル広告を表示させる前に読み込みを行なっておくことをオススメします。</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">adView</span> <span class="n">start</span><span class="p">];</span>
-</pre></div>
-
-<h2 id="広告の設置例"><a class="toclink" href="#広告の設置例">広告の設置例</a><a class="headerlink" href="#広告の設置例" title="Permanent link">&para;</a></h2>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">AdstirAds</span>
+</pre></div></div>
+</div>
+<h2 id="2-スワイプインタースティシャル広告のインスタンスを生成します"><a class="toclink" href="#2-スワイプインタースティシャル広告のインスタンスを生成します">2. スワイプインタースティシャル広告のインスタンスを生成します</a><a class="headerlink" href="#2-スワイプインタースティシャル広告のインスタンスを生成します" title="Permanent link">&para;</a></h2>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">AdstirFullscreenView</span> <span class="o">*</span><span class="n">adView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AdstirFullscreenView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithView</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">media</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">adView</span> <span class="p">=</span> <span class="n">AdstirFullscreenView</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">,</span> <span class="n">media</span><span class="p">:</span> <span class="err">メディア</span><span class="n">ID</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="err">枠</span><span class="n">No</span><span class="p">)</span>
+</pre></div></div>
+</div>
+<h2 id="3-スワイプインタースティシャル広告のデリゲートを設定しますオプション"><a class="toclink" href="#3-スワイプインタースティシャル広告のデリゲートを設定しますオプション">3. スワイプインタースティシャル広告のデリゲートを設定します(オプション)</a><a class="headerlink" href="#3-スワイプインタースティシャル広告のデリゲートを設定しますオプション" title="Permanent link">&para;</a></h2>
+<p>デリゲートをご利用される場合は、ページ下部の<code>広告の設置例</code>もご参考にしてください。</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">Objectiv-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">adView.delegate = self;</span>
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">adView</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+</pre></div></div>
+</div>
+<h2 id="4-スワイプインタースティシャル広告をviewに配置します"><a class="toclink" href="#4-スワイプインタースティシャル広告をviewに配置します">4. スワイプインタースティシャル広告をviewに配置します</a><a class="headerlink" href="#4-スワイプインタースティシャル広告をviewに配置します" title="Permanent link">&para;</a></h2>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Objectiv-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">[self.view addSubview:adView];</span>
+</pre></div></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">adView</span><span class="p">!)</span>
+</pre></div></div>
+</div>
+<h2 id="5-スワイプインタースティシャル広告の読み込みを開始します"><a class="toclink" href="#5-スワイプインタースティシャル広告の読み込みを開始します">5. スワイプインタースティシャル広告の読み込みを開始します</a><a class="headerlink" href="#5-スワイプインタースティシャル広告の読み込みを開始します" title="Permanent link">&para;</a></h2>
+<p>スワイプインタースティシャル広告はバックグラウンドで読み込みを行えます。
+スワイプインタースティシャル広告を表示させる前に読み込みを行なっておくことをオススメします。</p>
+<div class="superfences-tabs">
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0">Objectiv-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">adView</span> <span class="n">start</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">adView</span><span class="p">?.</span><span class="n">start</span><span class="p">()</span>
+</pre></div></div>
+</div>
+<h2 id="広告の設置例"><a class="toclink" href="#広告の設置例">広告の設置例</a><a class="headerlink" href="#広告の設置例" title="Permanent link">&para;</a></h2>
+<div class="superfences-tabs">
+<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
+<label for="__tab_6_0">Objective-c</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
 <span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
 
@@ -1471,8 +1506,8 @@
 
 <span class="k">@end</span>
 </pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">swift</label>
+<input name="__tabs_6" type="radio" id="__tab_6_1" />
+<label for="__tab_6_1">swift</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
 <span class="kd">import</span> <span class="nc">AdstirAds</span>
 

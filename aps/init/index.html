@@ -1200,6 +1200,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#前提条件" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#プロジェクトへapsの導入" class="md-nav__link">
     プロジェクトへAPSの導入
   </a>
@@ -1313,6 +1320,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#前提条件" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#プロジェクトへapsの導入" class="md-nav__link">
     プロジェクトへAPSの導入
   </a>
@@ -1376,6 +1390,10 @@
 <li>AdMobバナー</li>
 <li>AdMobインタースティシャル</li>
 </ul>
+<h2 id="前提条件"><a class="toclink" href="#前提条件">前提条件</a><a class="headerlink" href="#前提条件" title="Permanent link">&para;</a></h2>
+<ul>
+<li>iOS 9以上</li>
+</ul>
 <h2 id="プロジェクトへapsの導入"><a class="toclink" href="#プロジェクトへapsの導入">プロジェクトへAPSの導入</a><a class="headerlink" href="#プロジェクトへapsの導入" title="Permanent link">&para;</a></h2>
 <p>APSのSDKとアダプター、アドネットワークのSDKとアダプターをプロジェクトへ導入します。</p>
 <h3 id="cocoapodを利用している場合"><a class="toclink" href="#cocoapodを利用している場合">CocoaPodを利用している場合</a><a class="headerlink" href="#cocoapodを利用している場合" title="Permanent link">&para;</a></h3>
@@ -1387,18 +1405,36 @@
 <p>営業担当にお問い合わせください。</p>
 <h2 id="apsの初期化"><a class="toclink" href="#apsの初期化">APSの初期化</a><a class="headerlink" href="#apsの初期化" title="Permanent link">&para;</a></h2>
 <p>営業担当がお知らせしたAPSのapp idを用いて、下記のように初期化を行います。</p>
-<div class="codehilite"><pre><span></span><span class="c1">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
-<span class="o">...</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
+<span class="p">...</span>
 
-<span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">setAppKey</span><span class="p">:</span> <span class="err">@</span><span class="s2">&quot;your_app_id&quot;</span><span class="p">];</span>
-</pre></div>
+<span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setAppKey</span><span class="p">:</span> <span class="s">@&quot;your_app_id&quot;</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">DTBiOSSDK</span>
+<span class="p">...</span>
 
+<span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setAppKey</span><span class="p">(</span><span class="s">&quot;your_app_id&quot;</span><span class="p">)</span>
+</pre></div></div>
+</div>
 <p>テスト時には下記のものも追加します。
 アプリをリリースする前には下記のコードは削除してください。</p>
-<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setLogLevel</span><span class="p">:</span><span class="n">DTBLogLevelAll</span><span class="p">];</span>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setLogLevel</span><span class="p">:</span><span class="n">DTBLogLevelAll</span><span class="p">];</span>
 <span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setTestMode</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
-</pre></div>
-
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setLogLevel</span><span class="p">(</span><span class="n">DTBLogLevelAll</span><span class="p">)</span>
+<span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">testMode</span> <span class="p">=</span> <span class="kc">true</span>
+</pre></div></div>
+</div>
 <h2 id="広告を実装する"><a class="toclink" href="#広告を実装する">広告を実装する</a><a class="headerlink" href="#広告を実装する" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../banner/">バナー広告</a></li>

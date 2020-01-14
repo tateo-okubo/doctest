@@ -1423,23 +1423,48 @@
 <h3 id="1-メディアユーザidの設定を行う"><a class="toclink" href="#1-メディアユーザidの設定を行う">1. メディアユーザIDの設定を行う</a><a class="headerlink" href="#1-メディアユーザidの設定を行う" title="Permanent link">&para;</a></h3>
 <p>サーバーサイドで成果通知を受け取る場合、メディアユーザーIDを設定します。
 メディアユーザIDの設定は、<a href="#5-動画リワード広告の読み込み"><code>動画リワード広告の読み込み</code></a>よりも前までに設定する必要があります。</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">setMediaUserID</span><span class="p">:[[</span><span class="bp">UIDevice</span> <span class="n">currentDevice</span><span class="p">].</span><span class="n">identifierForVendor</span> <span class="n">UUIDString</span><span class="p">]];</span> <span class="c1">// ここでは例として、Vendor IDを指定していますが、任意のIDが利用可能です。</span>
-</pre></div>
-
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Objctive-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">setMediaUserID</span><span class="p">:[[</span><span class="bp">UIDevice</span> <span class="n">currentDevice</span><span class="p">].</span><span class="n">identifierForVendor</span> <span class="n">UUIDString</span><span class="p">]];</span> <span class="c1">// ここでは例として、Vendor IDを指定していますが、任意のIDが利用可能です。</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">AdstirVideoAds</span><span class="p">.</span><span class="n">setMediaUserID</span><span class="p">(</span><span class="bp">UIDevice</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">identifierForVendor</span><span class="p">!.</span><span class="n">uuidString</span><span class="p">);</span> <span class="c1">// ここでは例として、Vendor IDを指定していますが、任意のIDが利用可能です。</span>
+</pre></div></div>
+</div>
 <h3 id="2-動画広告の初期化を行う"><a class="toclink" href="#2-動画広告の初期化を行う">2. 動画広告の初期化を行う</a><a class="headerlink" href="#2-動画広告の初期化を行う" title="Permanent link">&para;</a></h3>
 <p><code>AdstirVideoAds prepareWithMedia</code>を使い、プロジェクトで利用する全ての動画広告の初期化を同時に行います。</p>
 <div class="admonition notice">
-<p>動画リワード広告とフルスクリーン広告を併用する場合は、動画リワード広告とフルスクリーン広告の広告枠全て同時に初期化を行う必要があります。</p>
+<p>動画リワード広告と全画面インタースティシャル広告を併用する場合は、動画リワード広告と全画面インタースティシャル広告の広告枠全て同時に初期化を行う必要があります。</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">prepareWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spots</span><span class="p">:</span><span class="l">@[</span><span class="p">@</span><span class="err">枠</span><span class="n">No1</span><span class="p">,</span> <span class="p">@</span><span class="err">枠</span><span class="n">No2</span><span class="l">]</span><span class="p">];</span>
-</pre></div>
-
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Objctive-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">AdstirVideoAds</span> <span class="nl">prepareWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spots</span><span class="p">:</span><span class="l">@[</span><span class="p">@</span><span class="err">枠</span><span class="n">No1</span><span class="p">,</span> <span class="p">@</span><span class="err">枠</span><span class="n">No2</span><span class="l">]</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">AdstirVideoAds</span><span class="p">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">withMedia</span><span class="p">:</span> <span class="s">&quot;メディアID&quot;</span><span class="p">,</span> <span class="n">spots</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
+</pre></div></div>
+</div>
 <h3 id="3-動画リワード広告のインスタンスを生成"><a class="toclink" href="#3-動画リワード広告のインスタンスを生成">3. 動画リワード広告のインスタンスを生成</a><a class="headerlink" href="#3-動画リワード広告のインスタンスを生成" title="Permanent link">&para;</a></h3>
-<p><code>AdstirVideoReward</code>のインスタンスを生成します。
-<div class="codehilite"><pre><span></span><span class="n">AdstirVideoReward</span> <span class="o">*</span><span class="n">aVideoReward</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AdstirVideoReward</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">];</span>
-</pre></div></p>
+<p><code>AdstirVideoReward</code>のインスタンスを生成します。</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">Objctive-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">AdstirVideoReward</span> <span class="o">*</span><span class="n">aVideoReward</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AdstirVideoReward</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithMedia</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">videoReward</span> <span class="p">=</span> <span class="n">AdstirVideoReward</span><span class="p">(</span><span class="n">media</span><span class="p">:</span> <span class="s">&quot;メディアID&quot;</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="err">枠</span><span class="n">No</span><span class="p">)</span><span class="o">!</span>
+</pre></div></div>
+</div>
 <h3 id="4-デリゲートの実装オプション"><a class="toclink" href="#4-デリゲートの実装オプション">4. デリゲートの実装(オプション)</a><a class="headerlink" href="#4-デリゲートの実装オプション" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nb">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
         <span class="o">:</span>
@@ -1476,22 +1501,71 @@
 <span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">adstirVideoRewardDidClose:</span><span class="p">(</span><span class="n">AdstirVideoReward</span> <span class="o">*</span><span class="p">)</span><span class="nv">videoReward</span>
 <span class="p">{</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="kd">let</span> <span class="nv">videoReward</span> <span class="p">=</span> <span class="n">AdstirVideoReward</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">media</span><span class="p">:</span> <span class="s">&quot;メディアID&quot;</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="err">枠</span><span class="n">No</span><span class="p">)</span>
+    <span class="n">videoReward</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 
+ <span class="cm">/** 動画の読み込み完了イベントを受け取ります */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoRewardDidLoad</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="cm">/** 動画の再生準備に失敗した際に呼び出されます */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoReward</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">,</span> <span class="n">didFailToLoadWithError</span> <span class="n">error</span><span class="p">:</span> <span class="bp">NSError</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="cm">/** 動画の再生開始イベントを受け取ります */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoRewardDidStart</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="cm">/** 動画のインセンティブ付与の完了イベントを受け取ります */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoRewardDidComplete</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="cm">/** 動画再生のキャンセルイベントを受け取ります */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoRewardDidCancel</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="cm">/** 動画再生ビューが閉じられたことを受け取ります */</span>
+<span class="kd">func</span> <span class="nf">adstirVideoRewardDidClose</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
 <h3 id="5-動画リワード広告の読み込み"><a class="toclink" href="#5-動画リワード広告の読み込み">5. 動画リワード広告の読み込み</a><a class="headerlink" href="#5-動画リワード広告の読み込み" title="Permanent link">&para;</a></h3>
 <p>動画リワード広告の読み込みを行います。</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">aVideoReward</span> <span class="n">load</span><span class="p">];</span>
-</pre></div>
-
+<div class="superfences-tabs">
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">aVideoReward</span> <span class="n">load</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">videoReward</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div></div>
+</div>
 <h3 id="6-動画リワード広告の再生"><a class="toclink" href="#6-動画リワード広告の再生">6. 動画リワード広告の再生</a><a class="headerlink" href="#6-動画リワード広告の再生" title="Permanent link">&para;</a></h3>
 <p>読み込みが完了した動画リワード広告を再生します。
 動画の再生を行うViewControllerを渡してください。
 動画の再生後、もう一度動画を再生するためには<a href="#5-動画リワード広告の読み込み"><code>5.動画リワード広告の読み込み</code></a>を行う必要があります。</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">([</span><span class="n">aVideoReward</span> <span class="n">canShow</span><span class="p">])</span> <span class="p">{</span>
+<div class="superfences-tabs">
+<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
+<label for="__tab_6_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">([</span><span class="n">aVideoReward</span> <span class="n">canShow</span><span class="p">])</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">aVideoReward</span> <span class="nl">showFromViewController</span><span class="p">:</span><span class="nb">self</span><span class="p">]];</span>
 <span class="p">}</span>
-</pre></div>
-
+</pre></div></div>
+<input name="__tabs_6" type="radio" id="__tab_6_1" />
+<label for="__tab_6_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">videoReward</span><span class="p">.</span><span class="n">canShow</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">videoReward</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="kc">self</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
 <h3 id="sdkの実装例"><a class="toclink" href="#sdkの実装例">SDKの実装例</a><a class="headerlink" href="#sdkの実装例" title="Permanent link">&para;</a></h3>
 <p>ここでは、単純な実装についてのサンプルを提示します。
 まず、Storyboard上に、<code>UIButton</code>と<code>UILabel</code>を配置し、<code>UIButton</code>をのOutletとActionを<code>showVideoButton</code>と<code>showVideoButtonDidTouchUpInside</code>にそれぞれ接続し、<code>UILabel</code>のOutletをstatusLabelに接続してください。</p>
@@ -1499,8 +1573,8 @@
 <li>AppDelegate</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Objective-c</label>
+<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
+<label for="__tab_7_0">Objective-c</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
 
 <span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
@@ -1517,8 +1591,8 @@
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">swift</label>
+<input name="__tabs_7" type="radio" id="__tab_7_1" />
+<label for="__tab_7_1">swift</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1">// ...</span>
 <span class="kd">import</span> <span class="nc">AdstirAds</span>
 <span class="c1">// ...</span>
@@ -1542,8 +1616,8 @@
 <li>ViewController</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">Objective-c</label>
+<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
+<label for="__tab_8_0">Objective-c</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
 
 <span class="k">@interface</span> <span class="nc">FooViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">AdstirVideoRewardDelegate</span><span class="o">&gt;</span>
@@ -1649,8 +1723,8 @@
 
 <span class="k">@end</span>
 </pre></div></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">swift</label>
+<input name="__tabs_8" type="radio" id="__tab_8_1" />
+<label for="__tab_8_1">swift</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
 <span class="kd">import</span> <span class="nc">AdstirAds</span>
 
@@ -1667,7 +1741,7 @@
 
         <span class="kc">self</span><span class="p">.</span><span class="n">showVideoButton</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span>
 
-        <span class="kd">let</span> <span class="nv">videoReward</span> <span class="p">=</span> <span class="n">AdstirVideoReward</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">media</span><span class="p">:</span> <span class="s">&quot;メディアID&quot;</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="err">枠</span><span class="n">No</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">videoReward</span> <span class="p">=</span> <span class="n">AdstirVideoReward</span><span class="p">(</span><span class="n">media</span><span class="p">:</span> <span class="s">&quot;メディアID&quot;</span><span class="p">,</span> <span class="n">spot</span><span class="p">:</span> <span class="err">枠</span><span class="n">No</span><span class="p">)</span>
         <span class="n">videoReward</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">;</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">videoReward</span> <span class="p">=</span> <span class="n">videoReward</span><span class="p">;</span>
 
@@ -1681,17 +1755,17 @@
     <span class="cm">/** リワード広告を表示するボタンのターゲットメソッド */</span>
     <span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">showVideoButtonTouchUpInside</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">)</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">showVideoButton</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">videoReward</span><span class="p">?.</span><span class="n">showFromViewController</span><span class="p">(</span><span class="kc">self</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">videoReward</span><span class="p">?.</span><span class="n">show</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="kc">self</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="cm">/** 動画の読み込み完了イベントを受け取ります */</span>
-    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidLoad</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidLoad</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">statusLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Loaded&quot;</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">showVideoButton</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">true</span>
     <span class="p">}</span>
 
     <span class="cm">/** 動画の再生準備に失敗した際に呼び出されます */</span>
-    <span class="kd">func</span> <span class="nf">adstirVideoReward</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!,</span> <span class="n">didFailToLoadWithError</span> <span class="n">error</span><span class="p">:</span> <span class="bp">NSError</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoReward</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">,</span> <span class="n">didFailToLoadWithError</span> <span class="n">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">NSLog</span><span class="p">(</span><span class="s">&quot;動画が読み込めませんでした&quot;</span><span class="p">)</span>
 
         <span class="c1">// 15秒待ってから再読み込みします</span>
@@ -1702,17 +1776,17 @@
     <span class="p">}</span>
 
     <span class="cm">/** 動画の再生開始イベントを受け取ります */</span>
-    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidStart</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidStart</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">statusLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
     <span class="p">}</span>
 
     <span class="cm">/** 動画のインセンティブ付与の完了イベントを受け取ります */</span>
-    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidComplete</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidComplete</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">isVideoRewardCompleted</span> <span class="p">=</span> <span class="kc">true</span>
     <span class="p">}</span>
 
     <span class="cm">/** 動画再生のキャンセルイベントを受け取ります */</span>
-    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidCancel</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidCancel</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// 15秒待ってから再読み込みします</span>
         <span class="n">dispatch_after</span><span class="p">(</span><span class="n">dispatch_time</span><span class="p">(</span><span class="n">DISPATCH_TIME_NOW</span><span class="p">,</span> <span class="p">(</span><span class="nb">Int64</span><span class="p">)(</span><span class="mf">15.0</span><span class="n">f</span> <span class="o">*</span> <span class="nb">Double</span><span class="p">(</span><span class="n">NSEC_PER_SEC</span><span class="p">))),</span> <span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="p">{</span>
             <span class="kc">self</span><span class="p">.</span><span class="n">statusLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Loading...&quot;</span><span class="p">;</span>
@@ -1720,7 +1794,7 @@
         <span class="p">})</span>
     <span class="p">}</span>
 
-    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidClose</span><span class="p">(</span><span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">!)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">adstirVideoRewardDidClose</span><span class="p">(</span><span class="kc">_</span> <span class="n">videoReward</span><span class="p">:</span> <span class="n">AdstirVideoReward</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">isVideoRewardCompleted</span><span class="p">)</span> <span class="p">{</span>
             <span class="kc">self</span><span class="p">.</span><span class="n">statusLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Congrats! Got virtual currency!&quot;</span>
         <span class="p">}</span>

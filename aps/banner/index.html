@@ -1392,26 +1392,51 @@
 <h2 id="apsバナーへのリクエストを行う"><a class="toclink" href="#apsバナーへのリクエストを行う">APSバナーへのリクエストを行う</a><a class="headerlink" href="#apsバナーへのリクエストを行う" title="Permanent link">&para;</a></h2>
 <h3 id="dtbadsizeのインスタンスを生成します"><a class="toclink" href="#dtbadsizeのインスタンスを生成します"><code>DTBAdSize</code>のインスタンスを生成します</a><a class="headerlink" href="#dtbadsizeのインスタンスを生成します" title="Permanent link">&para;</a></h3>
 <p>広告サイズは実際に表示するバナー広告のサイズを、<code>YOUR_SLOT_UUID</code>には営業担当がお知らせしたIDを入力してください。</p>
-<div class="codehilite"><pre><span></span><span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initBannerAdSizeWithWidth</span><span class="err">：</span><span class="mi">320</span> <span class="n">height</span><span class="err">：</span><span class="mi">50</span> <span class="n">andSlotUUID</span><span class="err">：</span><span class="s">@&quot;YOUR_SLOT_UUID&quot;</span><span class="p">];</span>
-</pre></div>
-
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Objective-C</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initBannerAdSizeWithWidth</span><span class="err">：</span><span class="mi">320</span> <span class="n">height</span><span class="err">：</span><span class="mi">50</span> <span class="n">andSlotUUID</span><span class="err">：</span><span class="s">@&quot;YOUR_SLOT_UUID&quot;</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">size</span> <span class="p">=</span> <span class="n">DTBAdSize</span><span class="p">(</span><span class="n">bannerAdSizeWithWidth</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">andSlotUUID</span><span class="p">:</span> <span class="s">&quot;YOUR_SLOT_UUID&quot;</span><span class="p">)</span>
+</pre></div></div>
+</div>
 <h3 id="dtbadloaderのインスタンスを生成しdtbadsizeを設定する"><a class="toclink" href="#dtbadloaderのインスタンスを生成しdtbadsizeを設定する"><code>DTBAdLoader</code>のインスタンスを生成し、<code>DTBAdSize</code>を設定する</a><a class="headerlink" href="#dtbadloaderのインスタンスを生成しdtbadsizeを設定する" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">DTBAdLoader</span> <span class="o">*</span><span class="n">adLoader</span> <span class="o">=</span> <span class="p">[</span><span class="n">DTBAdLoader</span> <span class="n">new</span><span class="p">];</span>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Objective-C</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">DTBAdLoader</span> <span class="o">*</span><span class="n">adLoader</span> <span class="o">=</span> <span class="p">[</span><span class="n">DTBAdLoader</span> <span class="n">new</span><span class="p">];</span>
 <span class="p">[</span><span class="n">adLoader</span> <span class="n">setSizes</span><span class="err">：</span><span class="n">size</span><span class="err">、</span><span class="nb">nil</span><span class="p">];</span>
-</pre></div>
-
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">adLoader</span> <span class="p">=</span> <span class="n">DTBAdLoader</span><span class="p">()</span>
+<span class="n">adLoader</span><span class="p">.</span><span class="n">setAdSizes</span><span class="p">([</span><span class="n">size</span><span class="p">])</span>
+</pre></div></div>
+</div>
 <h3 id="apsの入札リクエストを行う"><a class="toclink" href="#apsの入札リクエストを行う">APSの入札リクエストを行う</a><a class="headerlink" href="#apsの入札リクエストを行う" title="Permanent link">&para;</a></h3>
 <p>loadAdを呼び出して入札リクエストを行います。</p>
-<div class="codehilite"><pre><span></span><span class="err">[adLoader loadAd：self];</span>
-</pre></div>
-
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">Objective-C</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">adLoader</span> <span class="n">loadAd</span><span class="err">：</span><span class="nb">self</span><span class="p">];</span>
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">adLoader</span><span class="p">.</span><span class="n">loadAd</span><span class="p">(</span><span class="kc">self</span><span class="p">)</span>
+</pre></div></div>
+</div>
 <h3 id="dtbadcallbackの実装を行う"><a class="toclink" href="#dtbadcallbackの実装を行う"><code>DTBAdCallback</code>の実装を行う</a><a class="headerlink" href="#dtbadcallbackの実装を行う" title="Permanent link">&para;</a></h3>
 <p>APSが入札した場合はonSuccessが、入札しなかった場合はonFailureが呼ばれます。</p>
 <p>APSの入札結果を元に、AdMobへ広告リクエストを行います。</p>
 <p>onSuccessが呼ばれた場合は、AdMobへGADCustomEventExtrasを付与して広告リクエストを行い、
 onFailureが呼ばれた場合は、AdMobへ追加情報を付与せずにリクエストを行います。
 AdMobの実装については<a href="/admob#広告の実装">こちら</a>をご覧ください。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Objective-C</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
 <span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">GADBannerViewDelegate</span><span class="p">,</span> <span class="n">DTBAdCallback</span><span class="o">&gt;</span>
 <span class="k">@end</span>
 
@@ -1446,28 +1471,76 @@ AdMobの実装については<a href="/admob#広告の実装">こちら</a>を�
     <span class="c1">// AdMobへリクエストを行う</span>
     <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">GADBannerView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdSize</span><span class="p">:</span><span class="err">利用するバナーのサイズ</span><span class="p">];</span>
     <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="o">=</span> <span class="n">AD_ADMOB_BANNER_ID</span><span class="p">;</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="p">[</span><span class="n">KHMUtility</span> <span class="n">getFrontViewController</span><span class="p">];</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="o">=</span> <span class="s">@&quot;ADMOB_BANNER_ID&quot;</span><span class="p">;</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
     <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="nl">loadRequest</span><span class="p">:</span><span class="n">request</span><span class="p">];</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">DTBiOSSDK</span>
+<span class="kd">import</span> <span class="nc">GoogleMobileAds</span>
 
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">DTBAdCallback</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nv">bannerView</span><span class="p">:</span> <span class="n">GADBannerView</span><span class="p">!</span>
+
+    <span class="p">...</span>
+
+    <span class="kd">func</span> <span class="nf">onFailure</span><span class="p">(</span><span class="kc">_</span> <span class="n">error</span><span class="p">:</span> <span class="n">DTBAdError</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// APSの入札情報を付与してAdMobへリクエスト行う</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="kc">_</span> <span class="n">adResponse</span><span class="p">:</span> <span class="n">DTBAdResponse</span><span class="p">!)</span> <span class="p">{</span>
+        <span class="c1">// APSの入札情報を付与してAdMobへリクエスト行う</span>
+        <span class="kd">let</span> <span class="nv">amznSlots</span> <span class="p">=</span> <span class="n">adResponse</span><span class="p">.</span><span class="n">amznSlots</span><span class="p">()</span>
+        <span class="kd">let</span> <span class="nv">mediationHints</span> <span class="p">=</span> <span class="n">adResponse</span><span class="p">.</span><span class="n">mediationHints</span><span class="p">()</span>
+        <span class="kd">let</span> <span class="nv">extras</span> <span class="p">=</span> <span class="n">GADCustomEventExtras</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+        <span class="n">extras</span><span class="p">.</span><span class="n">setExtras</span><span class="p">(</span><span class="n">mediationHints</span><span class="p">,</span> <span class="n">forLabel</span><span class="p">:</span> <span class="n">amznSlots</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="n">extras</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="n">GADCustomEventExtras</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">GADRequest</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">extras</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">extras</span><span class="p">!)</span>
+        <span class="p">}</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="p">=</span> <span class="n">GADBannerView</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">adSize</span><span class="p">:</span> <span class="n">kGADAdSizeBanner</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="p">=</span> <span class="s">&quot;ADMOB_BANNER_ID&quot;</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="p">=</span> <span class="kc">self</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
 <h2 id="実装例"><a class="toclink" href="#実装例">実装例</a><a class="headerlink" href="#実装例" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="cp">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
+<div class="superfences-tabs">
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0">Objective-C</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
+<span class="cp">#import &lt;DTBiOSSDK/DTBiOSSDK.h&gt;</span>
+<span class="cp">#import &lt;GoogleMobileAds/GoogleMobileAds.h&gt;</span>
 
-<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">GADBannerViewDelegate</span><span class="p">,</span> <span class="n">DTBAdCallback</span><span class="o">&gt;</span>
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">DTBAdCallback</span><span class="o">&gt;</span>
+
+<span class="k">@property</span><span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="n">GADBannerView</span> <span class="o">*</span><span class="n">bannerView</span><span class="p">;</span>
+
 <span class="k">@end</span>
 
 <span class="k">@implementation</span> <span class="nc">ViewController</span>
+
 <span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span> <span class="p">{</span>
     <span class="p">[</span><span class="nb">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
-
     <span class="c1">// 広告サイズと、APSのslot idを指定します。</span>
-    <span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initBannerAdSizeWithWidth</span><span class="p">:</span><span class="mi">320</span> <span class="nl">height</span><span class="p">:</span><span class="mi">50</span> <span class="nl">andSlotUUID</span><span class="p">:</span><span class="n">APSのslot</span> <span class="kt">id</span><span class="p">];</span>
+    <span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initBannerAdSizeWithWidth</span><span class="p">:</span><span class="mi">320</span> <span class="nl">height</span><span class="p">:</span><span class="mi">50</span> <span class="nl">andSlotUUID</span><span class="p">:</span><span class="s">@&quot;AMAZON_SLOT_UUID&quot;</span><span class="p">];</span>
     <span class="n">DTBAdLoader</span> <span class="o">*</span><span class="n">adLoader</span> <span class="o">=</span> <span class="p">[</span><span class="n">DTBAdLoader</span> <span class="n">new</span><span class="p">];</span>
     <span class="p">[</span><span class="n">adLoader</span> <span class="nl">setSizes</span><span class="p">:</span><span class="n">size</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
     <span class="p">[</span><span class="n">adLoader</span> <span class="nl">loadAd</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
 <span class="p">}</span>
+
 
 <span class="cp">#pragma mark - DTBAdCallback</span>
 <span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onFailure:</span> <span class="p">(</span><span class="n">DTBAdError</span><span class="p">)</span><span class="nv">error</span> <span class="p">{</span>
@@ -1495,13 +1568,112 @@ AdMobの実装については<a href="/admob#広告の実装">こちら</a>を�
     <span class="p">}</span>
 
     <span class="c1">// AdMobへリクエストを行う</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">GADBannerView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdSize</span><span class="p">:</span><span class="err">利用するバナーのサイズ</span><span class="p">];</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="o">=</span> <span class="n">AD_ADMOB_BANNER_ID</span><span class="p">;</span>
-    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="p">[</span><span class="n">KHMUtility</span> <span class="n">getFrontViewController</span><span class="p">];</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">GADBannerView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdSize</span><span class="p">:</span><span class="n">kGADAdSizeBanner</span><span class="p">];</span>
+    <span class="c1">// viewへセット</span>
+    <span class="p">[</span><span class="nb">self</span> <span class="nl">addBannerViewToView</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">];</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="o">=</span> <span class="s">@&quot;AD_ADMOB_BANNER_ID&quot;</span><span class="p">;</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
     <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="nl">loadRequest</span><span class="p">:</span><span class="n">request</span><span class="p">];</span>
 <span class="p">}</span>
-</pre></div>
+
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addBannerViewToView:</span><span class="p">(</span><span class="bp">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">bannerView</span> <span class="p">{</span>
+  <span class="n">bannerView</span><span class="p">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
+  <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">bannerView</span><span class="p">];</span>
+  <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addConstraints</span><span class="p">:</span><span class="l">@[</span>
+    <span class="p">[</span><span class="bp">NSLayoutConstraint</span> <span class="nl">constraintWithItem</span><span class="p">:</span><span class="n">bannerView</span>
+                               <span class="nl">attribute</span><span class="p">:</span><span class="n">NSLayoutAttributeBottom</span>
+                               <span class="nl">relatedBy</span><span class="p">:</span><span class="n">NSLayoutRelationEqual</span>
+                                  <span class="nl">toItem</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">bottomLayoutGuide</span>
+                               <span class="nl">attribute</span><span class="p">:</span><span class="n">NSLayoutAttributeTop</span>
+                              <span class="nl">multiplier</span><span class="p">:</span><span class="mi">1</span>
+                                <span class="nl">constant</span><span class="p">:</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="bp">NSLayoutConstraint</span> <span class="nl">constraintWithItem</span><span class="p">:</span><span class="n">bannerView</span>
+                               <span class="nl">attribute</span><span class="p">:</span><span class="n">NSLayoutAttributeCenterX</span>
+                               <span class="nl">relatedBy</span><span class="p">:</span><span class="n">NSLayoutRelationEqual</span>
+                                  <span class="nl">toItem</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span>
+                               <span class="nl">attribute</span><span class="p">:</span><span class="n">NSLayoutAttributeCenterX</span>
+                              <span class="nl">multiplier</span><span class="p">:</span><span class="mi">1</span>
+                                <span class="nl">constant</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
+                                <span class="l">]</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div></div>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">DTBiOSSDK</span>
+<span class="kd">import</span> <span class="nc">GoogleMobileAds</span>
+
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">DTBAdCallback</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nv">bannerView</span><span class="p">:</span> <span class="n">GADBannerView</span><span class="p">!</span>
+
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+
+        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setAppKey</span><span class="p">(</span><span class="s">&quot;your_app_id&quot;</span><span class="p">)</span>
+        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setLogLevel</span><span class="p">(</span><span class="n">DTBLogLevelAll</span><span class="p">)</span>
+        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">testMode</span> <span class="p">=</span> <span class="kc">true</span>
+
+        <span class="kd">let</span> <span class="nv">size</span> <span class="p">=</span> <span class="n">DTBAdSize</span><span class="p">(</span><span class="n">bannerAdSizeWithWidth</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">andSlotUUID</span><span class="p">:</span> <span class="s">&quot;AMAZON_SLOT&quot;</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">adLoader</span> <span class="p">=</span> <span class="n">DTBAdLoade</span><span class="p">()</span>
+        <span class="n">adLoader</span><span class="p">.</span><span class="n">setAdSizes</span><span class="p">([</span><span class="n">size</span><span class="p">])</span>
+        <span class="n">adLoader</span><span class="p">.</span><span class="n">loadAd</span><span class="p">(</span><span class="kc">self</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">onFailure</span><span class="p">(</span><span class="kc">_</span> <span class="n">error</span><span class="p">:</span> <span class="n">DTBAdError</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// APSの入札情報を付与してAdMobへリクエスト行う</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="kc">_</span> <span class="n">adResponse</span><span class="p">:</span> <span class="n">DTBAdResponse</span><span class="p">!)</span> <span class="p">{</span>
+        <span class="c1">// APSの入札情報を付与してAdMobへリクエスト行う</span>
+        <span class="kd">let</span> <span class="nv">amznSlots</span> <span class="p">=</span> <span class="n">adResponse</span><span class="p">.</span><span class="n">amznSlots</span><span class="p">()</span>
+        <span class="kd">let</span> <span class="nv">mediationHints</span> <span class="p">=</span> <span class="n">adResponse</span><span class="p">.</span><span class="n">mediationHints</span><span class="p">()</span>
+        <span class="kd">let</span> <span class="nv">extras</span> <span class="p">=</span> <span class="n">GADCustomEventExtras</span><span class="p">.</span><span class="kd">init</span><span class="p">()</span>
+        <span class="n">extras</span><span class="p">.</span><span class="n">setExtras</span><span class="p">(</span><span class="n">mediationHints</span><span class="p">,</span> <span class="n">forLabel</span><span class="p">:</span> <span class="n">amznSlots</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="n">extras</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">loadAdMobBannerAd</span><span class="p">(</span><span class="n">extras</span><span class="p">:</span> <span class="n">GADCustomEventExtras</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">GADRequest</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">extras</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">extras</span><span class="p">!)</span>
+        <span class="p">}</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span> <span class="p">=</span> <span class="n">GADBannerView</span><span class="p">(</span><span class="n">adSize</span><span class="p">:</span> <span class="n">kGADAdSizeBanner</span><span class="p">)</span>
+        <span class="c1">// viewへセット</span>
+        <span class="n">addBannerViewToView</span><span class="p">(</span><span class="n">bannerView</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">adUnitID</span> <span class="p">=</span> <span class="s">&quot;AD_ADMOB_BANNER_ID&quot;</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">rootViewController</span> <span class="p">=</span> <span class="kc">self</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">bannerView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">addBannerViewToView</span><span class="p">(</span><span class="kc">_</span> <span class="n">bannerView</span><span class="p">:</span> <span class="n">GADBannerView</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">bannerView</span><span class="p">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">bannerView</span><span class="p">)</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">addConstraints</span><span class="p">(</span>
+        <span class="p">[</span><span class="bp">NSLayoutConstraint</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">bannerView</span><span class="p">,</span>
+                           <span class="n">attribute</span><span class="p">:</span> <span class="p">.</span><span class="n">bottom</span><span class="p">,</span>
+                           <span class="n">relatedBy</span><span class="p">:</span> <span class="p">.</span><span class="bp">equal</span><span class="p">,</span>
+                           <span class="n">toItem</span><span class="p">:</span> <span class="n">bottomLayoutGuide</span><span class="p">,</span>
+                           <span class="n">attribute</span><span class="p">:</span> <span class="p">.</span><span class="n">top</span><span class="p">,</span>
+                           <span class="n">multiplier</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="n">constant</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="bp">NSLayoutConstraint</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">bannerView</span><span class="p">,</span>
+                           <span class="n">attribute</span><span class="p">:</span> <span class="p">.</span><span class="n">centerX</span><span class="p">,</span>
+                           <span class="n">relatedBy</span><span class="p">:</span> <span class="p">.</span><span class="bp">equal</span><span class="p">,</span>
+                           <span class="n">toItem</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span>
+                           <span class="n">attribute</span><span class="p">:</span> <span class="p">.</span><span class="n">centerX</span><span class="p">,</span>
+                           <span class="n">multiplier</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="n">constant</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
                 
                   
                 

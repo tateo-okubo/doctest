@@ -1374,7 +1374,10 @@
 このコードは実装の全体をつかむためのサンプルですので、この通りに実装しても動作しません。<br />
 実際に広告を実装する際は、ライブラリ詳細の項目をよく確認して必要なパラメータの設定及び処理を記述する必要があります。<br />
 各メソッドの詳細は<a href="../../../api/#ネイティブ広告">APIリファレンス</a>をご覧ください。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#import &quot;FooViewController.h&quot;</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;FooViewController.h&quot;</span>
 <span class="k">@import</span> <span class="n">AdstirAds</span><span class="p">;</span>
 
 <span class="k">@interface</span> <span class="nc">FooViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">AdstirNativeAdDelegate</span><span class="p">,</span> <span class="n">AdstirNativeVideoViewDelegate</span><span class="o">&gt;</span>
@@ -1524,8 +1527,124 @@
     <span class="nb">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@end</span>
-</pre></div>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">AdstirAds</span><span class="p">;</span>
 
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">AdstirNativeAdDelegate</span><span class="p">,</span> <span class="n">AdstirNativeVideoViewDelegate</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nv">nativead</span><span class="p">:</span> <span class="n">AdstirNativeAd</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">nativeadResponse</span><span class="p">:</span> <span class="n">AdstirNativeAdResponse</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">adstirNativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">?</span>
+
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">textLabel</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">sponsoredLabel</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">iconView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">ctaButton</span><span class="p">:</span> <span class="bp">UIButton</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">optoutButton</span><span class="p">:</span> <span class="bp">UIButton</span><span class="p">!</span>
+    <span class="kr">@IBOutlet</span> <span class="kd">var</span> <span class="nv">videoView</span><span class="p">:</span> <span class="bp">UIView</span><span class="p">!</span>
+
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view.</span>
+        <span class="c1">// インスタンス生成</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span> <span class="p">=</span> <span class="n">AdstirNativeAd</span><span class="p">()</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span><span class="p">?.</span><span class="n">media</span> <span class="p">=</span> <span class="s">&quot;メディアID&quot;</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span><span class="p">?.</span><span class="n">spot</span> <span class="p">=</span> <span class="err">枠</span><span class="n">No</span>
+
+        <span class="c1">// ガイドラインで規定されているスポンサー表記を実装した通りに設定してください</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span><span class="p">?.</span><span class="n">sponsoredText</span> <span class="p">=</span> <span class="s">&quot;スポンサー表記&quot;</span>
+
+        <span class="c1">// 広告枠登録時に設定した広告要素が配信されます</span>
+        <span class="c1">// 広告レスポンスを受け取るDelegateを設定します</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+        <span class="c1">// ネイティブ動画のViewを作成します</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span> <span class="p">=</span> <span class="n">AdstirNativeVideoView</span><span class="p">()</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span><span class="p">?.</span><span class="n">frame</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">videoView</span><span class="p">.</span><span class="n">frame</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">videoView</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span><span class="p">!)</span>
+
+        <span class="c1">// ネイティブ広告を読み込みます</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativead</span><span class="p">?.</span><span class="n">getAd</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> AdstirNativeAdDelegateの実装</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeAdDidReceive</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeAd</span><span class="p">:</span> <span class="n">AdstirNativeAd</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">AdstirNativeAdResponse</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 広告レスポンスが正常に取得できた時に行う処理を実装します</span>
+        <span class="c1">// AdstirNativeAdDelegateのメソッドはすべてバックグラウンドスレッドで動作します</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativeadResponse</span> <span class="p">=</span> <span class="n">response</span>
+        <span class="n">DispatchQueue</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">async</span> <span class="p">{</span>
+            <span class="c1">// タイトルを設定します。</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">titleLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">title</span><span class="p">;</span>
+            <span class="c1">// 説明文を設定します</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">textLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">descriptionText</span><span class="p">;</span>
+            <span class="c1">// 広告であることを表示します</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">sponsoredLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">nativeAd</span><span class="p">.</span><span class="n">sponsoredText</span><span class="p">;</span>
+            <span class="c1">// CTAボタンにCTAテキストを設定します</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">ctaButton</span><span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">cta</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+            <span class="c1">// アイコン画像をImageViewに設置します</span>
+            <span class="n">response</span><span class="p">.</span><span class="n">bindSmallImage</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">iconView</span><span class="p">)</span>
+            <span class="c1">// バナー画像をImageViewに設置します</span>
+            <span class="n">response</span><span class="p">.</span><span class="n">bindImage</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">)</span>
+            <span class="c1">// オプトアウトボタンにオプトアウト画像を設定できます。</span>
+            <span class="n">response</span><span class="p">.</span><span class="n">bindOptoutImage</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">optoutButton</span><span class="p">)</span>
+
+            <span class="c1">// ネイティブ動画のdelegatを設定します</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">;</span>
+            <span class="c1">// ネイティブ動画広告をviewに読み込みます</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">adstirNativeVideoView</span><span class="p">?.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">adstirNativeVideoAd</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 広告を表示するときにimpressionを呼び出します</span>
+        <span class="n">response</span><span class="p">.</span><span class="n">impression</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">adstirNativeAdDidFail</span><span class="p">(</span><span class="n">toReceive</span> <span class="n">nativeAd</span><span class="p">:</span> <span class="n">AdstirNativeAd</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 広告レスポンスが正常に取得できなかった時に行う処理を実装します</span>
+        <span class="c1">// AdstirNativeAdDelegateのメソッドはすべてバックグラウンドスレッドで動作します</span>
+    <span class="p">}</span>
+
+    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> AdstirNativeVideoViewDelegateの実装</span>
+    <span class="cm">/** 動画の読み込み成功時に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideoDidLoad</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** 動画の再生準備に失敗した際に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideo</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">,</span> <span class="n">didFailToLoadWithError</span> <span class="n">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** 動画再生開始時に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideoDidStart</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** 動画停止時に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideoDidStop</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** 動画再生完了時に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideoDidFinishPlayback</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** 動画の再生に失敗した際に呼び出されます */</span>
+    <span class="kd">func</span> <span class="nf">adstirNativeVideo</span><span class="p">(</span><span class="kc">_</span> <span class="n">nativeVideoView</span><span class="p">:</span> <span class="n">AdstirNativeVideoView</span><span class="p">,</span> <span class="n">didFailToPlaybackWithError</span> <span class="n">error</span><span class="p">:</span> <span class="n">Error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> ボタンの実装</span>
+    <span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">adClick</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span><span class="nb">AnyObject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 広告がクリックされたときはclickを呼び出します</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativeadResponse</span><span class="p">?.</span><span class="n">click</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">optoutClick</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span><span class="nb">AnyObject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// オプトアウトボタンがクリクされた時はclickOptoutを呼び出します</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">nativeadResponse</span><span class="p">?.</span><span class="n">clickOptout</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
 <h2 id="ライブラリ詳細"><a class="toclink" href="#ライブラリ詳細">ライブラリ詳細</a><a class="headerlink" href="#ライブラリ詳細" title="Permanent link">&para;</a></h2>
 <p><a href="../../../api/#ネイティブ広告">APIリファレンス</a>をご覧ください。</p>
                 

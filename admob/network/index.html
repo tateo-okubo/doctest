@@ -1433,24 +1433,40 @@
 <p>広告の読み込み前にMoPub SDKを初期化する必要がございます。
 AppDelegateなどで<code>initializeSdkWithConfiguration:</code>を呼び出してください。
 <code>MOPUB_AD_UNIT_ID</code>は営業担当よりおしらせします。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#import &quot;MoPub.h&quot;;</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Objective-c</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;MoPub.h&quot;;</span>
 <span class="err">…</span>
-
 <span class="k">@implementation</span> <span class="nc">AppDelegate</span>
 
 <span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
     <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
 
-  <span class="n">MPMoPubConfiguration</span> <span class="o">*</span><span class="n">sdkConfig</span> <span class="o">=</span>
-  <span class="p">[[</span><span class="n">MPMoPubConfiguration</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdUnitIdForAppInitialization</span><span class="p">:</span><span class="s">@&quot;MOPUB_AD_UNIT_ID&quot;</span><span class="p">];</span>
-
-  <span class="p">[[</span><span class="n">MoPub</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">initializeSdkWithConfiguration</span><span class="p">:</span><span class="n">sdkConfig</span> <span class="nl">completion</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
-  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="hll">  <span class="n">MPMoPubConfiguration</span> <span class="o">*</span><span class="n">sdkConfig</span> <span class="o">=</span>
+</span><span class="hll">  <span class="p">[[</span><span class="n">MPMoPubConfiguration</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdUnitIdForAppInitialization</span><span class="p">:</span><span class="s">@&quot;MOPUB_AD_UNIT_ID&quot;</span><span class="p">];</span>
+</span>
+<span class="hll">  <span class="p">[[</span><span class="n">MoPub</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">initializeSdkWithConfiguration</span><span class="p">:</span><span class="n">sdkConfig</span> <span class="nl">completion</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+</span>  <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
-</pre></div>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">swift</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">MoPub</span>
 
+<span class="kr">@UIApplicationMain</span>
+<span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="bp">UIApplication</span><span class="p">.</span><span class="n">LaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+<span class="hll">        <span class="kd">let</span> <span class="nv">sdkConfig</span> <span class="p">=</span> <span class="n">MPMoPubConfiguration</span><span class="p">(</span><span class="n">adUnitIdForAppInitialization</span><span class="p">:</span> <span class="s">&quot;MOPUB_AD_UNIT_ID&quot;</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">MoPub</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">initializeSdk</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">sdkConfig</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</span>        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
 <div class="footnote">
 <hr />
 <ol>
