@@ -1546,8 +1546,12 @@ AdMobの実装については<a href="/admob#広告の実装">こちら</a>を�
 
 <span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span> <span class="p">{</span>
     <span class="p">[</span><span class="nb">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+
+    <span class="c1">// APSのSDKの初期化を行います。</span>
+    <span class="p">[[</span><span class="n">DTBAds</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setAppKey</span><span class="p">:</span> <span class="s">@&quot;YOUR_APP_ID&quot;</span><span class="p">];</span>
+
     <span class="c1">// 広告サイズと、APSのslot idを指定します。</span>
-    <span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initBannerAdSizeWithWidth</span><span class="p">:</span><span class="mi">320</span> <span class="nl">height</span><span class="p">:</span><span class="mi">50</span> <span class="nl">andSlotUUID</span><span class="p">:</span><span class="s">@&quot;AMAZON_SLOT_UUID&quot;</span><span class="p">];</span>
+    <span class="n">DTBAdSize</span> <span class="o">*</span><span class="n">size</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DTBAdSize</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initBannerAdSizeWithWidth</span><span class="p">:</span><span class="mi">320</span> <span class="nl">height</span><span class="p">:</span><span class="mi">50</span> <span class="nl">andSlotUUID</span><span class="p">:</span><span class="s">@&quot;YOUR_SLOT_UUID&quot;</span><span class="p">];</span>
     <span class="n">DTBAdLoader</span> <span class="o">*</span><span class="n">adLoader</span> <span class="o">=</span> <span class="p">[</span><span class="n">DTBAdLoader</span> <span class="n">new</span><span class="p">];</span>
     <span class="p">[</span><span class="n">adLoader</span> <span class="nl">setSizes</span><span class="p">:</span><span class="n">size</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
     <span class="p">[</span><span class="n">adLoader</span> <span class="nl">loadAd</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
@@ -1625,11 +1629,10 @@ AdMobの実装については<a href="/admob#広告の実装">こちら</a>を�
     <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
         <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
 
-        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setAppKey</span><span class="p">(</span><span class="s">&quot;your_app_id&quot;</span><span class="p">)</span>
-        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setLogLevel</span><span class="p">(</span><span class="n">DTBLogLevelAll</span><span class="p">)</span>
-        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">testMode</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="c1">// APSのSDKの初期化を行います。</span>
+        <span class="n">DTBAds</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setAppKey</span><span class="p">(</span><span class="s">&quot;YOUR_APP_ID&quot;</span><span class="p">)</span>
 
-        <span class="kd">let</span> <span class="nv">size</span> <span class="p">=</span> <span class="n">DTBAdSize</span><span class="p">(</span><span class="n">bannerAdSizeWithWidth</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">andSlotUUID</span><span class="p">:</span> <span class="s">&quot;AMAZON_SLOT&quot;</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">size</span> <span class="p">=</span> <span class="n">DTBAdSize</span><span class="p">(</span><span class="n">bannerAdSizeWithWidth</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">andSlotUUID</span><span class="p">:</span> <span class="s">&quot;YOUR_SLOT_UUID&quot;</span><span class="p">)</span>
         <span class="kd">let</span> <span class="nv">adLoader</span> <span class="p">=</span> <span class="n">DTBAdLoade</span><span class="p">()</span>
         <span class="n">adLoader</span><span class="p">.</span><span class="n">setAdSizes</span><span class="p">([</span><span class="n">size</span><span class="p">])</span>
         <span class="n">adLoader</span><span class="p">.</span><span class="n">loadAd</span><span class="p">(</span><span class="kc">self</span><span class="p">)</span>
