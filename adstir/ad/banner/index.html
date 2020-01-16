@@ -1361,7 +1361,7 @@
                 <h1 id="バナー広告の導入"><a class="toclink" href="#バナー広告の導入">バナー広告の導入</a><a class="headerlink" href="#バナー広告の導入" title="Permanent link">&para;</a></h1>
 <p>320x50, 300x250, 320x100などのサイズのバナーの導入方法です。</p>
 <h2 id="広告の設置"><a class="toclink" href="#広告の設置">広告の設置</a><a class="headerlink" href="#広告の設置" title="Permanent link">&para;</a></h2>
-<p>以下のどちらかの方法で広告を設置してください。</p>
+<p>下記のように広告を設置してください。</p>
 <ul>
 <li>FooViewController.m</li>
 </ul>
@@ -1383,8 +1383,8 @@
     <span class="c1">// 広告表示位置: タブバーの下でセンタリング、広告サイズ: 320,50 の場合</span>
     <span class="n">CGFloat</span> <span class="n">originX</span> <span class="o">=</span> <span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">kAdstirAdSize320x50</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
     <span class="n">CGFloat</span> <span class="n">originY</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">statusBarFrame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
-    <span class="n">AdstirMraidView</span> <span class="o">*</span><span class="n">aAdstir</span> <span class="o">=</span> <span class="p">[[[</span><span class="n">AdstirMraidView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdSize</span><span class="p">:</span><span class="n">kAdstirAdSize320x50</span> <span class="nl">origin</span><span class="p">:</span><span class="n">CGPointMake</span><span class="p">(</span><span class="n">originX</span><span class="p">,</span> <span class="n">originY</span><span class="p">)</span>
-        <span class="nl">media</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">];</span>
+    <span class="n">AdstirMraidView</span> <span class="o">*</span><span class="n">aAdstir</span> <span class="o">=</span> <span class="p">[[</span><span class="n">AdstirMraidView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithAdSize</span><span class="p">:</span><span class="n">kAdstirAdSize320x50</span> <span class="nl">origin</span><span class="p">:</span><span class="n">CGPointMake</span><span class="p">(</span><span class="n">originX</span><span class="p">,</span> <span class="n">originY</span><span class="p">)</span>
+        <span class="nl">media</span><span class="p">:</span><span class="s">@&quot;メディアID&quot;</span> <span class="nl">spot</span><span class="p">:</span><span class="err">枠</span><span class="n">No</span><span class="p">];</span>
     <span class="n">aAdstir</span><span class="p">.</span><span class="n">intervalTime</span> <span class="o">=</span> <span class="err">広告リフレッシュ秒</span><span class="p">[</span><span class="err">整数</span><span class="p">];</span>
     <span class="n">aAdstir</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
     <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">aAdstir</span><span class="p">];</span>
